@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Hello, World!</title>
+</head>
+<body>
+ <nav class="navbar">
+   <div class="navbar-brand">
+    <a href="#">SSNEC Results Portal</a>
+   </div>
+   <div class="navbar-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+   </div>
+   <div class="navbar-menu" id="navbar-links">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Results</a>
+    <a href="#">Contact Us</a>
+   </div>
+ </nav>
+
+ <!-- Example page content -->
+ <div class="page-content">
+  <h1>Welcome to SSNEC Results Portal</h1>
+ </div>
+    <script>
+  const toggleButton = document.getElementById('mobile-menu');
+  const navbarLinks = document.getElementById('navbar-links');
+
+  toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active');
+    toggleButton.classList.toggle('active');
+  });
+    </script>
+  <main class="container">
+    <img src="img/Logo.png" alt="My logo" class="logo">
+    <h2>SSNEC RESULTS</h2>
+    <h3>Check Result</h3>
+    <div class="action-container">
+    <form id="results-Online">
+    <label for="section">Select Exam Type</label>
+    <select name="section" id="section">
+       <option selected value="CPE">Certificate of Primary Education</option>
+       <option value="CSE">Certificate of Secondary Education</option>
+    </select>
+      <label for="index">Index Number</label>
+      <input required type="text" id="index" placeholder="0168151" maxlength="7" title="please enter exactly 7 digits" pattern="\d{7}">
+      <label for="date">Date of Birth <span class="date-format">(DD/MM/YYYY)</span></label>
+      <input required type="date" id="date">
+      <label for="year">Examination Year</label>
+      <select name="year" id="year">
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+      </select>
+      <p id="hint">🌟 Your index number is found on your Examination ID Card</p>
+      <input id="boton" type="submit" value="🏆CHECK RESULT">
+     
+   </form>
+   
+    <div class="help">
+      <p <span class="need">📞Need Help?</span></p>
+      <ul>
+        <li>Contact your School for your index number.</li>
+        <li>Results are available 24/7 online.</li>
+        <li>Call our Help desk for technical Support.</li>
+        <li>Toll free: 0781513744 | Email Chiangjrgmail.com</li>
+      </ul>
+    </div>
+    <div class="quick">
+      <p <span class="tips">🎯 Quick Tips</span></p>
+      <ul>
+        <li>Double-check your index number.</li>
+        <li>Results are Final and Official.</li>
+        <li>Download your results confirmation after viewing.</li>
+      </ul>
+    </div>
+   </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-content">
+      <p id="copyright">Copyright &copy; 2025; Government of<span class="block"> South Sudan.</span> All Rights Reserved.</p>
+    <p id="SSNEC">South Sudan National Examination<br><span class="council">Council</span> </p>
+    </div>
+    
+  </footer>
+</body>
+</html>
