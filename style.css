@@ -1,62 +1,60 @@
-html{
+/* ------------------------------
+   GLOBAL STYLES
+--------------------------------*/
+html {
   font-size: 16px;
+  box-sizing: border-box;
 }
-  
-body{
-  font-size: 12px;
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 14px;
   font-family: Arial, sans-serif;
-   background:
-    radial-gradient(circle at top right,
-      #fff9e6 0%,
-      #f6f6f2 45%
-    ),
-    radial-gradient(circle at top left,
-      #f2f7ff 0%,
-      #f6f6f2 50%
-    ),
-    linear-gradient(to bottom,
-      #f6f6f2 0%,
-      #f1f6e8 100%
-    );
+  background:
+    radial-gradient(circle at top right, #fff9e6 0%, #f6f6f2 45%),
+    radial-gradient(circle at top left, #f2f7ff 0%, #f6f6f2 50%),
+    linear-gradient(to bottom, #f6f6f2 0%, #f1f6e8 100%);
   min-height: 100vh;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  justify-content: center;
+  padding: 10px; /* ensures spacing from screen edges */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-/* Navbar container */
+
+/* ------------------------------
+   NAVBAR
+--------------------------------*/
 .navbar {
-  background-color: #ffffff; /* White navbar */
+  background-color: #ffffff;
   padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: Arial, sans-serif;
-  position: fixed; /* Fixed at top */
+  width: 100%;
+  max-width: 1000px;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 1000;
   border-bottom: 1px solid #ddd;
-  box-sizing: border-box; /* Ensure padding doesn't hide content */
 }
 
-/* Brand styling */
 .navbar-brand a {
-  color: #004080; /* Dark blue brand text */
+  color: #004080;
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
-  line-height: 1; /* Ensure proper height */
 }
 
-/* Navbar links container */
 .navbar-menu {
   display: flex;
   gap: 2rem;
 }
 
-/* Navbar links styling */
 .navbar-menu a {
   color: #004080;
   text-decoration: none;
@@ -65,18 +63,17 @@ body{
   transition: color 0.3s ease;
 }
 
-/* Hover effect */
 .navbar-menu a:hover {
   color: #ffcc00;
 }
 
-/* Hamburger menu - hidden on desktop */
+/* Hamburger menu for mobile */
 .navbar-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
-  height: 18px; /* Ensure enough height for bars */
+  height: 18px;
   cursor: pointer;
 }
 
@@ -88,34 +85,31 @@ body{
   transition: all 0.3s ease;
 }
 
-/* Responsive styling for screens <=768px */
+/* Mobile responsive navbar */
 @media screen and (max-width: 768px) {
   .navbar-menu {
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
     background-color: #ffffff;
     width: 100%;
     position: absolute;
-    top: 100%; /* Directly below navbar */
+    top: 100%;
     left: 0;
     border-top: 1px solid #ddd;
   }
 
-  .navbar-menu a {
-    padding: 1rem 1.5rem;
-    display: block;
-  }
-
-  .navbar-toggle {
-    display: flex; /* Show hamburger */
-  }
-
-  /* Show menu when active */
   .navbar-menu.active {
     display: flex;
   }
 
-  /* Animate hamburger to X */
+  .navbar-menu a {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
   .navbar-toggle.active .bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -127,137 +121,82 @@ body{
   }
 }
 
-/* Page content spacing */
+/* Add space below navbar */
 .page-content {
-  padding-top: calc(60px + 1rem); /* match actual navbar height */
+  padding-top: 70px; /* match navbar height + spacing */
+  text-align: center;
 }
-
-
-
 .date-format{
   color: blue;
   font-size: 0.9em;
   font-weight: normal;
 }
 
-.logo {
-  width: 100px;
-  height: auto;
-  margin-left: 20px; 
-}
-   
-h1{  
-  color: darkblue;
-  font-size: 20px;
-  font-weight: 300;
-  margin-top: 2px; 
-  justify-content: center;
-  text-align: center; 
-   }
-h2{
-  color: darkblue;
-  font-size: 20px;
-  font-weight: 400;
-  margin-top: 2px;
-  justify-content: center;
-  text-align: center;
- }
-h3{
-  color: darkblue;
-  font-size: 40px;
-  font-weight: bold;
-  margin-top: 2px;
-  justify-content: center;
-  text-align: center;
- }
 
-.container{
+/* ------------------------------
+   CONTAINER (MAIN FORM)
+--------------------------------*/
+.container {
   width: 100%;
   max-width: 450px;
-  margin: 10px auto 50px;
+  margin: 20px auto 50px;
   padding: 20px;
   background-color: white;
   border-radius: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
-label[for="section"]{
-   font-size: 20px;
-   color: black;
-   font-weight: bold;
+.container img.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
 }
-   
-   label[for="index"]{
-   font-size: 20px;
-   color: black;
-   font-weight: bold;
+
+h1, h2, h3 {
+  color: darkblue;
+  text-align: center;
+  margin: 5px 0;
 }
-   
-label[for="date"]{
-   font-size: 20px;
-   color: black;
-   font-weight: bold;
-   
-}
-   
-label[for="year"]{
-   font-size: 20px;
-   color: black;
-   font-weight: bold;
-}
- select,
-input[type="text"],
-input[type="date"] {
+
+h1 { font-size: 24px; font-weight: 300; }
+h2 { font-size: 20px; font-weight: 400; }
+h3 { font-size: 32px; font-weight: bold; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
-  max-width: 315px;
-  height: 40px;
-}    
-
-input[type="text"]{
-  font-size: 16px;
-  width: 300px;
-  height: 30px;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 1px;
-  border-radius: 5px;
-} 
-input[type="date"]{
-  width: 300px;
-  height: 30px;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 1px;
-  border-radius: 5px;
-  background-color: white;
-  
-}    
-
-
-#hint{
-  font-size: 15px;
-  font-weight: lighter;
 }
-#boton{
-  color: white;
-  padding: 14px 20px;
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+input[type="text"], input[type="date"], select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+#boton {
+  padding: 12px 20px;
   border: none;
-  border-radius: 15px ;
- 
-  background: linear-gradient(
-    90deg,
-    #8fb6f5 0%,
-    #7dd3a8 100%
-  );
-  color: #ffffff;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #8fb6f5 0%, #7dd3a8 100%);
+  color: #fff;
   font-weight: 700;
   font-size: large;
   cursor: pointer;
-  height: 50px;
-  margin-bottom: 5px;
+  margin-top: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -265,81 +204,67 @@ input[type="date"]{
   filter: brightness(1.05);
 }
 
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin: 2px 4px 10px 2px;
-  
+#hint {
+  font-size: 14px;
+  font-weight: 300;
 }
 
-.footer{
+/* ------------------------------
+   HELP AND TIPS BOXES
+--------------------------------*/
+.help, .quick {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+.help {
+  background-color: #eef4ff;
+  border: 1px solid #e1e9f8;
+  color: #004080;
+}
+
+.quick {
+  background-color: #e9fbf0;
+  border: 1px solid #d9f2e3;
+  color: green;
+}
+
+.need, .tips {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+.footer {
   width: 100%;
   max-width: 450px;
-  margin: 20px auto; 
-  background-color: white;
+  margin: 20px auto;
   padding: 20px;
+  background-color: white;
   border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 16px;
 }
-.block{
+
+.block {
   display: block;
 }
-#copyright{
-  margin-bottom: 0px;
-  margin-top: 5px;
-  text-align: center;
+
+#copyright {
+  margin: 5px 0;
 }
-#SSNEC{
+
+#SSNEC {
   font-weight: lighter;
-  text-align: center;
-}
-.council{
-  text-align: center;
-}
-.need{
-  font-size: 20px;
-  font-weight: bold;
-  color: darkblue;
-  margin-left: 20px;
-}
-.help{
-  width: 100%;
-  color: blue;
-  border: 1px solid #e1e9f8;
-  background-color: #eef4ff;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  ;
 }
 ul li{
   margin-bottom: 15px;
   font-size: 17px;
-}
-.quick{
-  width: 100%;
-  color: green;
-  border: 1px solid #d9f2e3;
-  background-color: #e9fbf0;
-  border-radius: 15px;
-  margin-left: 0px;
-  margin-top: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-}
-.tips{
-  font-size: 20px;
-  font-weight: bold;
-  color: green;
-  margin-left: 20px;
-}
-.action-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* space between items */
-}
+  }
